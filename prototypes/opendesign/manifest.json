@@ -1,0 +1,65 @@
+{
+  "generated": "2026-10-09T09:37:34.5059767Z",
+  "sections": [
+    {
+      "id": "mockups",
+      "label": "Mockups",
+      "groups": [
+        {
+          "slug": "business-workbench-dashboard",
+          "files": [
+            {
+              "label": "index.html",
+              "path": "mockups/business-workbench-dashboard/index.html"
+            }
+          ]
+        },
+        {
+          "slug": "micro-business-assistant",
+          "files": [
+            {
+              "label": "index.html",
+              "path": "mockups/micro-business-assistant/index.html"
+            }
+          ]
+        },
+        {
+          "slug": "operation-review-workbench",
+          "files": [
+            {
+              "label": "index.html",
+              "path": "mockups/operation-review-workbench/index.html"
+            }
+          ]
+        },
+        {
+          "slug": "s2-pricing-decision",
+          "files": [
+            {
+              "label": "index.html",
+              "path": "mockups/s2-pricing-decision/index.html"
+            }
+          ]
+        },
+        {
+          "slug": "single-item-cost",
+          "files": [
+            {
+              "label": "index.html",
+              "path": "mockups/single-item-cost/index.html"
+            }
+          ]
+        },
+        {
+          "slug": "skill-confirmation-market",
+          "files": [
+            {
+              "label": "index.html",
+              "path": "mockups/skill-confirmation-market/index.html"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

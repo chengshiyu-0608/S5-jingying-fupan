@@ -1,0 +1,4 @@
+interface:
+  display_name: "商品与定价决策"
+  short_description: "把成本、毛利、保本、套餐和试卖串成确认卡工作流"
+  default_prompt: "帮我按确认卡算清一个商品的真实成本、毛利和可试卖价格"

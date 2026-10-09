@@ -1,0 +1,502 @@
+# Versions
+
+> Theo doi phien ban cua tat ca skills. Agent co the so sanh voi ban local de biet can cap nhat.
+
+## Current versions
+
+| Skill | Version | Last Updated | Category |
+|-------|---------|--------------|----------|
+| product-marketing-context | 1.1.0 | 2026-05-02 | foundation |
+| 00-ke-hoach-mkt | 2.0.0 | 2026-04-24 | strategy |
+| 01-lich-noi-dung | 2.2.0 | 2026-07-30 | content |
+| 02-brief-chien-dich | 2.1.0 | 2026-07-30 | strategy |
+| 03-danh-gia-hieu-suat | 2.3.1 | 2026-07-30 | performance |
+| 04-script-video | 2.3.0 | 2026-07-30 | content |
+| 05-copy-quang-cao | 2.5.2 | 2026-08-16 | content |
+| 06-brief-ugc-egc | 2.1.0 | 2026-07-30 | content |
+| 07-bao-cao-marketing | 2.1.1 | 2026-07-30 | performance |
+| 08-nghien-cuu-doi-thu | 2.3.1 | 2026-07-30 | strategy |
+| 09-insight-khach-hang | 2.1.0 | 2026-07-30 | strategy |
+| 10-tinh-kpi-nguoc | 2.1.0 | 2026-07-30 | performance |
+| 11-thiet-lap-kenh | 2.0.1 | 2026-07-30 | operations |
+| 12-brief-landing-page | 2.1.1 | 2026-07-30 | operations |
+| 13-phan-tich-du-lieu | 2.1.1 | 2026-07-30 | operations |
+| 14-email-marketing | 2.1.1 | 2026-07-30 | operations |
+| 15-social-listening | 2.1.0 | 2026-05-02 | content |
+| 16-marketing-psychology | 1.0.0 | 2026-04-24 | strategy |
+| 17-pricing-strategy | 1.0.0 | 2026-04-24 | strategy |
+| 18-referral-program | 1.0.0 | 2026-04-24 | operations |
+| 19-ab-test-setup | 1.1.0 | 2026-07-30 | performance |
+| 20-brief-client-intake | 1.1.0 | 2026-09-12 | operations |
+| 21-audit-ads-performance | 1.3.1 | 2026-07-30 | performance |
+| 22-personal-brand-context | 1.1.0 | 2026-06-06 | foundation |
+| 23-personal-brand-strategy | 1.0.0 | 2026-05-08 | strategy |
+| 24-ai-avatar-production | 1.1.0 | 2026-06-06 | content |
+| 25-voice-clone-podcast | 1.0.0 | 2026-05-08 | content |
+| 26-thought-leadership-content | 1.0.0 | 2026-05-08 | content |
+| 27-personal-brand-monetize | 1.0.0 | 2026-05-08 | strategy |
+| 28-community-building | 1.0.0 | 2026-05-08 | operations |
+| 29-xuat-khau-b2b | 1.0.0 | 2026-05-20 | strategy |
+| 30-thiet-ke-master | 1.2.0 | 2026-07-30 | design |
+| 31-offer-design | 1.0.0 | 2026-06-30 | strategy |
+| 32-seo-growth | 1.0.0 | 2026-06-30 | performance |
+| 33-b2b-lead-gen | 1.0.0 | 2026-06-30 | operations |
+| 34-ai-marketing-os | 1.1.0 | 2026-07-30 | operations |
+| 35-brand-voice | 1.0.0 | 2026-07-30 | content |
+| 36-content-brief | 1.0.0 | 2026-07-30 | content |
+| 37-caption-social | 1.0.2 | 2026-08-16 | content |
+| 38-seeding-plan | 1.0.0 | 2026-07-30 | content |
+| 39-content-audit | 1.0.0 | 2026-07-30 | content |
+| 40-next-content-plan | 1.0.0 | 2026-07-30 | content |
+| 41-campaign-asset-list | 1.0.0 | 2026-07-30 | operations |
+| 42-brief-hinh-anh | 1.0.2 | 2026-08-16 | content |
+| 43-brief-carousel | 1.0.0 | 2026-07-30 | content |
+| 44-brief-video-editor | 1.0.0 | 2026-07-30 | content |
+| 45-brief-canva | 1.0.0 | 2026-07-30 | operations |
+| 46-brand-guideline | 1.0.0 | 2026-07-30 | strategy |
+| 47-design-review | 1.0.0 | 2026-07-30 | operations |
+| 48-quick-visual-brief | 1.0.0 | 2026-07-30 | operations |
+| 49-html-email-template | 1.0.0 | 2026-07-30 | operations |
+| 50-asset-resize | 1.0.0 | 2026-07-30 | operations |
+| 51-audience-research | 1.0.0 | 2026-07-30 | performance |
+| 52-account-structure | 1.0.0 | 2026-07-30 | performance |
+| 53-tracking-setup | 1.0.0 | 2026-07-30 | performance |
+| 54-media-plan | 1.0.0 | 2026-07-30 | performance |
+| 55-scaling-ads | 1.0.0 | 2026-07-30 | performance |
+| 56-retargeting-plan | 1.0.0 | 2026-07-30 | performance |
+| 57-next-ads-plan | 1.0.0 | 2026-07-30 | performance |
+| 58-positioning | 1.0.2 | 2026-08-16 | strategy |
+| 59-go-to-market | 1.0.0 | 2026-07-30 | strategy |
+| 60-launch-playbook | 1.0.0 | 2026-07-30 | strategy |
+| 61-budget-planning | 1.0.0 | 2026-07-30 | strategy |
+| 62-marketing-review | 1.0.0 | 2026-07-30 | operations |
+| 63-campaign-retrospective | 1.0.0 | 2026-07-30 | operations |
+| 64-team-brief | 1.0.0 | 2026-07-30 | operations |
+| 65-team-performance-review | 1.0.0 | 2026-07-30 | operations |
+| 66-crisis-playbook | 1.0.0 | 2026-07-30 | operations |
+| 67-agency-vendor-brief | 1.0.0 | 2026-07-30 | operations |
+| 68-cro-audit-trang | 1.0.0 | 2026-08-10 | performance |
+| 69-giu-chan-khach-hang | 1.0.0 | 2026-08-10 | operations |
+| 70-lead-magnet | 1.0.0 | 2026-08-10 | content |
+| 71-sales-enablement | 1.0.0 | 2026-08-10 | operations |
+| 72-hoi-dong-marketing | 1.0.0 | 2026-08-10 | strategy |
+| 74-copy-hai-lop | 1.0.0 | 2026-08-16 | content |
+| product-marketing-context-global | 1.0.0 | 2026-05-08 | foundation (global) |
+| 00-marketing-plan-global | 1.0.0 | 2026-05-08 | strategy (global) |
+| 01-content-calendar-global | 1.0.0 | 2026-05-08 | content (global) |
+| 02-campaign-brief-global | 1.0.0 | 2026-05-08 | strategy (global) |
+| 03-performance-eval-global | 1.0.0 | 2026-05-08 | performance (global) |
+| 04-script-video-global | 1.0.0 | 2026-05-08 | content (global) |
+| 05-ad-copy-global | 1.0.0 | 2026-05-08 | content (global) |
+| 06-ugc-egc-brief-global | 1.0.0 | 2026-05-08 | content (global) |
+| 07-marketing-report-global | 1.0.0 | 2026-05-08 | performance (global) |
+| 08-competitor-research-global | 1.0.0 | 2026-05-08 | strategy (global) |
+| 09-customer-insight-global | 1.0.0 | 2026-05-08 | strategy (global) |
+| 10-reverse-kpi-global | 1.0.0 | 2026-05-08 | performance (global) |
+| 11-channel-setup-global | 1.0.0 | 2026-05-08 | operations (global) |
+| 12-landing-page-brief-global | 1.0.0 | 2026-05-08 | operations (global) |
+| 13-data-analysis-global | 1.0.0 | 2026-05-08 | operations (global) |
+| 14-email-marketing-global | 1.0.0 | 2026-05-08 | operations (global) |
+| 15-social-listening-global | 1.0.0 | 2026-05-08 | content (global) |
+| 16-marketing-psychology-global | 1.0.0 | 2026-05-08 | strategy (global) |
+| 17-pricing-strategy-global | 1.0.0 | 2026-05-08 | strategy (global) |
+| 18-referral-program-global | 1.0.0 | 2026-05-08 | operations (global) |
+| 19-ab-test-setup-global | 1.0.0 | 2026-05-08 | performance (global) |
+| 20-client-intake-brief-global | 1.0.0 | 2026-05-08 | operations (global) |
+| 21-ads-audit-global | 1.0.0 | 2026-05-08 | performance (global) |
+| 22-personal-brand-context-global | 1.1.0 | 2026-06-06 | foundation (global) |
+| 23-personal-brand-strategy-global | 1.0.0 | 2026-05-08 | strategy (global) |
+| 24-ai-avatar-production-global | 1.1.0 | 2026-06-06 | content (global) |
+| 25-voice-clone-podcast-global | 1.0.0 | 2026-05-08 | content (global) |
+| 26-thought-leadership-content-global | 1.0.0 | 2026-05-08 | content (global) |
+| 27-personal-brand-monetize-global | 1.0.0 | 2026-05-08 | strategy (global) |
+| 28-community-building-global | 1.0.0 | 2026-05-08 | operations (global) |
+| 29-dropshipping-mastery-global | 1.0.0 | 2026-05-08 | strategy (global) — FLAGSHIP |
+| 30-design-master-global | 1.1.0 | 2026-06-06 | design (global) |
+| 31-offer-design-global | 1.0.0 | 2026-06-30 | strategy (global) |
+| 32-seo-growth-global | 1.0.0 | 2026-06-30 | performance (global) |
+| 33-b2b-lead-gen-global | 1.0.0 | 2026-06-30 | operations (global) |
+| 34-ai-marketing-os-global | 1.0.0 | 2026-07-08 | operations (global) |
+| 35-brand-voice-global | 1.0.0 | 2026-07-30 | content (global) |
+| 36-content-brief-global | 1.0.0 | 2026-07-30 | content (global) |
+| 37-social-caption-global | 1.0.0 | 2026-07-30 | content (global) |
+| 38-community-seeding-global | 1.0.0 | 2026-07-30 | content (global) |
+| 39-content-audit-global | 1.0.0 | 2026-07-30 | content (global) |
+| 40-next-content-plan-global | 1.0.0 | 2026-07-30 | content (global) |
+| 41-campaign-asset-list-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 42-image-brief-global | 1.0.0 | 2026-07-30 | content (global) |
+| 43-carousel-brief-global | 1.0.0 | 2026-07-30 | content (global) |
+| 44-video-editor-brief-global | 1.0.0 | 2026-07-30 | content (global) |
+| 45-design-tool-brief-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 46-brand-guideline-global | 1.0.0 | 2026-07-30 | strategy (global) |
+| 47-design-review-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 48-quick-visual-brief-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 49-html-email-template-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 50-asset-resize-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 51-audience-research-global | 1.0.0 | 2026-07-30 | performance (global) |
+| 52-account-structure-global | 1.0.0 | 2026-07-30 | performance (global) |
+| 53-tracking-setup-global | 1.0.0 | 2026-07-30 | performance (global) |
+| 54-media-plan-global | 1.0.0 | 2026-07-30 | performance (global) |
+| 55-scaling-ads-global | 1.0.0 | 2026-07-30 | performance (global) |
+| 56-retargeting-plan-global | 1.0.0 | 2026-07-30 | performance (global) |
+| 57-next-ads-plan-global | 1.0.0 | 2026-07-30 | performance (global) |
+| 58-positioning-global | 1.0.0 | 2026-07-30 | strategy (global) |
+| 59-go-to-market-global | 1.0.0 | 2026-07-30 | strategy (global) |
+| 60-launch-playbook-global | 1.0.0 | 2026-07-30 | strategy (global) |
+| 61-budget-planning-global | 1.0.0 | 2026-07-30 | strategy (global) |
+| 62-marketing-review-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 63-campaign-retrospective-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 64-team-brief-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 65-team-performance-review-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 66-crisis-playbook-global | 1.0.0 | 2026-07-30 | operations (global) |
+| 67-agency-vendor-brief-global | 1.0.0 | 2026-07-30 | operations (global) |
+
+## Changelog
+
+### 2026-08-16 — Unreleased (additive, no replace)
+
+**Added:** `74-copy-hai-lop` — dual-layer slogan / poster line for VN. Method adapted (not copied) from MIT skill xiaoma-durex-copywriter. Does not replace `05-copy-quang-cao` or `37-caption-social`. No Durex posters, corpus lines, or render scripts imported.
+
+**Changed:** sibling routing on `05-copy-quang-cao` 2.5.2, `37-caption-social` 1.0.2, `42-brief-hinh-anh` 1.0.2, `58-positioning` 1.0.2.
+
+**Marketplace:** 143 → 144 skills (75 VN + 69 Global). Plugin version stays 3.7.0 until release cut.
+
+### 2026-08-10 — v3.7.0
+
+**Routing, thresholds, and five new skills.** Came out of a structured comparison against another open marketing-skills repo — more useful for what it exposed in our own repo than for what it suggested we add.
+
+**Fixed:**
+- Two validator bugs. It could not parse `description: |` block scalars (extracting the literal `|`, silently disabling every check for those skills), and its trigger check was a substring match on `dung|use|when` that any Vietnamese description passed by accident. The previously reported "89 passed" was not measuring anything. Honest baseline after the fix: **0 passed, 138 warnings**. With the parser working, `30-thiet-ke-master` and `30-design-master-global` turned out to have descriptions over the 1024-character spec limit.
+- Four contradictory ad kill thresholds consolidated into one ladder in `references/quality-gates-vn.md` Gate 1, anchored on target CPA so it recalibrates per account. Skills 21 and 54 now cite it instead of restating numbers.
+- Consent handling was in the Global tracking skill and missing from the Vietnamese one. Added, covering Nghi dinh 13/2023 domestically and GDPR consent mode v2 / CCPA cross-border.
+- `product-marketing-context` had no version field despite 60+ skills reading it. Added document version and changelog with bump rules.
+- Eleven source-attribution notes removed, two of which named real people.
+
+**Added:** 5 VN skills — `68-cro-audit-trang`, `69-giu-chan-khach-hang`, `70-lead-magnet`, `71-sales-enablement`, `72-hoi-dong-marketing`. Plus `.claude-plugin/plugin.json` (was missing; `claude plugin update` reads its version).
+
+**Changed:**
+- All 143 descriptions rewritten to a 4-part pattern (intent, quoted trigger phrases, broadening clause, sibling routing) because the model routes on `name` and `description` only — `triggers:` is documentation and is never seen at selection time. **Result: 143/143 PASS, 0 warnings.**
+- `32-seo-growth` rebuilt from 5.9 KB to a working skill plus 11 validated JSON-LD templates (repo previously had zero).
+- `hook-formulas-vn.md` models a hook as three simultaneous components with a no-duplication rule and a component-level diagnostic; read by skills 01, 04, 05.
+- `34-ai-marketing-os` gains a two-tier action model, spend caps and a kill switch.
+- `33-b2b-lead-gen` gains evidence discipline (source URL, verification date, confidence per lead; no Hot label without a named buying signal) and Zalo/phone-first outreach.
+- Marketplace 138 → 143 skills; version 3.7.0.
+
+### 2026-07-30 — v3.6.0
+
+**Role SOP Packs Go Global — 33 English mirrors complete bilingual parity for the four role clusters.**
+
+**New skills (33, Global cluster):**
+- Content system: `35-brand-voice-global` through `40-next-content-plan-global`.
+- Design production: `41-campaign-asset-list-global` through `50-asset-resize-global`.
+- Performance ops: `51-audience-research-global` through `57-next-ads-plan-global`.
+- Leader ops: `58-positioning-global` through `67-agency-vendor-brief-global`.
+
+**Adaptation, not translation:** frameworks and process steps carry over unchanged; currency rebased to USD against `references/benchmarks-global.md`; channels swapped to the global stack; compliance shifted to FTC/GDPR/CCPA/CAN-SPAM. Community seeding rebuilt around Reddit/Discord/Slack norms.
+
+**Docs/manifest:**
+- Marketplace skill count 105 → 138; version 3.6.0.
+
+### 2026-07-30 — v3.5.0
+
+**Role SOP Deep Integration — four role packs (Leader, Content, Designer, Performance) adapted from community-shared fullstack marketing documents, plus a foundation knowledge library.**
+
+**New skills (33, VN cluster):**
+- Content system: `35-brand-voice`, `36-content-brief`, `37-caption-social`, `38-seeding-plan`, `39-content-audit`, `40-next-content-plan`.
+- Design production: `41-campaign-asset-list`, `42-brief-hinh-anh`, `43-brief-carousel`, `44-brief-video-editor`, `45-brief-canva`, `46-brand-guideline`, `47-design-review`, `48-quick-visual-brief`, `49-html-email-template`, `50-asset-resize`.
+- Performance ops: `51-audience-research`, `52-account-structure`, `53-tracking-setup`, `54-media-plan`, `55-scaling-ads`, `56-retargeting-plan`, `57-next-ads-plan`.
+- Leader ops: `58-positioning`, `59-go-to-market`, `60-launch-playbook`, `61-budget-planning`, `62-marketing-review`, `63-campaign-retrospective`, `64-team-brief`, `65-team-performance-review`, `66-crisis-playbook`, `67-agency-vendor-brief`.
+
+**New knowledge library:**
+- `knowledge/` — 10 foundation thinking files + `knowledge/trien-khai/` implementation notes, sized for role-based AI project upload.
+
+**New agent and workflows:**
+- Agent `design-producer` (visual & production).
+- Workflows `content-engine`, `performance-loop`, `design-pipeline`, `leader-cadence`.
+
+**New references:**
+- `references/marketing-templates-library.md`, `references/ai-tool-orchestration.md`.
+
+**Enriched skills (SOP-level detail added, no structural breaks):**
+- `01` 2.1→2.2 · `02` 2.0→2.1 · `03` 2.2→2.3 · `04` 2.2→2.3 · `05` 2.3→2.4 · `06` 2.0→2.1 · `07` 2.0→2.1 · `08` 2.2→2.3 · `09` 2.0→2.1 · `10` 2.0→2.1 · `12` 2.0→2.1 · `13` 2.0→2.1 · `14` 2.0→2.1 · `19` 1.0→1.1 · `21` 1.2→1.3 · `30` 1.1→1.2 · `34` 1.0→1.1.
+
+**Progressive disclosure (patch releases, 14 new per-skill reference files):**
+- `03` →2.3.1 · `05` →2.4.1 · `07` →2.1.1 · `08` →2.3.1 · `11` →2.0.1 · `12` →2.1.1 · `13` →2.1.1 · `14` →2.1.1 · `21` →1.3.1. Every SKILL.md now sits under the 500-line spec guideline with detail moved into `references/`; no content removed.
+
+**Docs/manifest:**
+- Marketplace skill count 72 → 105; version 3.5.0.
+- `34-ai-marketing-os` bumped to 1.1.0 with Brand Hub → skill mapping and five role-project deployment guidance.
+- Legacy personal attribution removed across docs; source-specific brand assets generalized into Brand Hub placeholders.
+- Corrected stale reference paths (`skills/references/` → `skills/vi/references/`) across docs, skills, and workflows.
+
+### 2026-07-08 — v3.4.0
+
+**AI Marketing OS Expansion — adapted from community-shared fullstack marketing documents and aligned with agent skills, connectors/MCP, source-of-truth, and role-based AI workflow patterns.**
+
+**New skills:**
+- `34-ai-marketing-os` and `34-ai-marketing-os-global`: Brand Hub/source of truth, role-based AI agents/projects, skill chains, second brain, data loops, MCP/connectors, SOP cadence, governance, and 30-60-90 rollout planning.
+
+**New references:**
+- `skills/vi/34-ai-marketing-os/references/ai-marketing-os-playbook.md`
+- `skills/en/34-ai-marketing-os-global/references/ai-marketing-os-playbook.md`
+
+**Docs/manifest:**
+- Marketplace skill count updated to 72.
+- README/README.vi, CONNECTORS, llms, and agent routing updated for AI Marketing OS.
+- Existing skill set left intact; community role skill samples were consolidated into OS-level workflow guidance instead of imported as duplicate skills.
+
+### 2026-06-30 — v3.3.0
+
+**Growth Expansion — inspired by SaaS/growth skill patterns, adapted to this repo's bilingual VN + Global structure.**
+
+**New skills:**
+- `31-offer-design` and `31-offer-design-global`: Offer packaging, value stack, bonuses, guarantees, scarcity/urgency, upsell/downsell, and offer ladder.
+- `32-seo-growth` and `32-seo-growth-global`: SEO audit, AI SEO/GEO, schema, programmatic SEO, directory submissions, and backlink planning.
+- `33-b2b-lead-gen` and `33-b2b-lead-gen-global`: Prospecting, cold outreach, lead scoring, sales enablement, CRM handoff, and RevOps basics.
+
+**New references:**
+- `skills/vi/31-offer-design/references/offer-framework.md`
+- `skills/en/31-offer-design-global/references/offer-framework.md`
+- `skills/vi/32-seo-growth/references/seo-growth-playbook.md`
+- `skills/en/32-seo-growth-global/references/seo-growth-playbook.md`
+- `skills/vi/33-b2b-lead-gen/references/b2b-lead-gen-playbook.md`
+- `skills/en/33-b2b-lead-gen-global/references/b2b-lead-gen-playbook.md`
+
+**Docs/manifest:**
+- Marketplace skill count updated to 70.
+- README/README.vi updated for Growth Expansion.
+- Versions table now includes existing `29-xuat-khau-b2b` for parity with installed skill files.
+
+### 2026-06-06 — v2.6.0
+
+**Prompt Director upgrade for Design + Personal Brand**
+
+**Upgraded skills:**
+- `30-thiet-ke-master` 1.1.0: Added Prompt Director mode for reference images, master prompts, prompt diagnosis, brand color/logo adaptation, and multi-image flow routing.
+- `30-design-master-global` 1.1.0: Global equivalent of Prompt Director mode with English prompt-output defaults.
+- `22-personal-brand-context` 1.1.0: Added Visual Asset Inventory to classify style refs, face refs, logo/mark, palette, background, and missing assets.
+- `22-personal-brand-context-global` 1.1.0: Added the same asset inventory across US/EU/SEA/LATAM variants.
+- `24-ai-avatar-production` 1.1.0: Added reference-image-to-avatar prompt setup, face/style/logo/palette replacement workflow, and multi-flow avatar routing.
+- `24-ai-avatar-production-global` 1.1.0: Global equivalent for avatar reference intake and prompt setup.
+
+**New references:**
+- `skills/vi/30-thiet-ke-master/references/prompt-director.md`
+- `skills/en/30-design-master-global/references/prompt-director.md`
+
+**Behavior change:** Future agents can accept one or many reference images, identify each image role, generate copy-paste-ready prompts, and ask for the exact next asset per flow (face image, logo, brand colors, product/background, exact text).
+
+### 2026-05-08 — v2.5.0
+
+**Global cluster — 30 new skills (Global Marketing + Personal Brand + Dropshipping flagship)**
+
+**New global skills (31 entries — 1 foundation + 30 numbered):**
+- `product-marketing-context-global` 1.0.0: Foundation, 4 region variants (US/EU/SEA/LATAM)
+- `00-marketing-plan-global` 1.0.0: Universal English
+- `01-content-calendar-global` 1.0.0: Universal
+- `02-campaign-brief-global` 1.0.0: Universal
+- `03-performance-eval-global` 1.0.0: 4 region variants (benchmarks)
+- `04-script-video-global` 1.0.0: Universal
+- `05-ad-copy-global` 1.0.0: Universal + Dropshipping Mode
+- `06-ugc-egc-brief-global` 1.0.0: Universal
+- `07-marketing-report-global` 1.0.0: Universal
+- `08-competitor-research-global` 1.0.0: Universal
+- `09-customer-insight-global` 1.0.0: Universal
+- `10-reverse-kpi-global` 1.0.0: 4 variants (currency)
+- `11-channel-setup-global` 1.0.0: 4 variants (platforms)
+- `12-landing-page-brief-global` 1.0.0: Universal + Dropshipping Mode
+- `13-data-analysis-global` 1.0.0: Universal
+- `14-email-marketing-global` 1.0.0: 4 variants (legal — GDPR/CCPA/CAN-SPAM/PDPA/LGPD)
+- `15-social-listening-global` 1.0.0: Universal
+- `16-marketing-psychology-global` 1.0.0: Universal
+- `17-pricing-strategy-global` 1.0.0: 4 variants (currency psychology + VAT/GST/Sales tax)
+- `18-referral-program-global` 1.0.0: 4 variants (anti-spam law per region)
+- `19-ab-test-setup-global` 1.0.0: Universal
+- `20-client-intake-brief-global` 1.0.0: Universal (no industry variants v2.5)
+- `21-ads-audit-global` 1.0.0: 4 variants (benchmarks) + Dropshipping audit
+- `22-personal-brand-context-global` 1.0.0: Foundation PB, 4 region variants (each covers founder/coach/creator)
+- `23-personal-brand-strategy-global` 1.0.0: Universal
+- `24-ai-avatar-production-global` 1.0.0: 4 variants (disclosure law — FTC/EU AI Act/regional)
+- `25-voice-clone-podcast-global` 1.0.0: Universal
+- `26-thought-leadership-content-global` 1.0.0: Universal
+- `27-personal-brand-monetize-global` 1.0.0: 4 variants (tax/legal per region)
+- `28-community-building-global` 1.0.0: Universal
+- `29-dropshipping-mastery-global` 1.0.0: FLAGSHIP, 12 sections, US/EU focus, 10 ads/week pipeline
+
+**Changed (5 agents → universal mode):**
+- `mkt-strategist`, `content-producer`, `performance-analyst`, `channel-operator`, `personal-brand-builder`
+- Auto-detect VN/Global cluster by reading `.agents/*-context*.md` files
+- Behavior identical to v2.4.0 if only VN context exists
+- (No version field on agents — documented in AGENTS.md)
+
+**New references (7):**
+- `global-platforms-comparison.md` — 10 platforms × 4 regions matrix
+- `global-legal-compliance.md` — GDPR/CCPA/CAN-SPAM/TCPA/PDPA/LGPD
+- `global-currency-pricing.md` — currency psychology + tax frameworks
+- `dropshipping-tools-global.md` — 15+ tools deep-dive
+- `ai-video-disclosure-global.md` — FTC/EU AI Act/regional disclosure
+- `voice-clone-prompts-global.md` — US/UK/AU/SEA accent samples
+- `hook-formulas-global.md` — 6 hook types × 5 English examples
+
+**New workflows (8):**
+- Marketing: client-onboard, campaign-launch, monthly-cycle, content-production, dropshipping-launch
+- Personal Brand: personal-brand-launch, ai-avatar-batch, personal-brand-monthly
+
+**New docs (5):**
+- `docs/getting-started-global.md` — 5-min quickstart
+- `docs/global-region-guide.md` — "Which region am I?"
+- `docs/dropshipping-guide.md` — 8-chapter handbook
+- `docs/apac-roadmap.md` — v2.6.0 plan
+- `docs/release-notes/v2.5.0.md` — bilingual release notes
+
+**Backward compatibility:** Zero breaking changes. VN cluster (`skills/` — 29 skills) UNCHANGED. All existing agents work in VN-only mode without config.
+
+### 2026-05-08 — v2.4.0
+
+**Personal Brand + AI Avatar cluster (7 new skills)**
+
+**New skills:**
+- `22-personal-brand-context` 1.0.0: Foundation, 3 variants (founder/coach/creator)
+- `23-personal-brand-strategy` 1.0.0: 12-month strategy + Ikigai niche + positioning
+- `24-ai-avatar-production` 1.0.0: Deep dive flagship — 3-tier tools (Free/Pro/Enterprise), 4 workflows (single/translate/batch/hybrid), voice clone, anti-detection FB/IG/TikTok VN, ethics & disclosure VN (Nghi dinh 147/2024)
+- `25-voice-clone-podcast` 1.0.0: Audio AI — voiceover/podcast/audiobook, repurpose 1:10
+- `26-thought-leadership-content` 1.0.0: Long-form text — 3 structures, 6 hooks, sentence rhythm, repurpose 1:5
+- `27-personal-brand-monetize` 1.0.0: 3 funnel versions, pricing psychology, outreach, brand deal, VN tax & legal 2026
+- `28-community-building` 1.0.0: Platform comparison VN 2026 (Zalo/Telegram/FB/Skool/Mighty/Discord), 3-layer blueprint, onboarding 7-day
+
+**Upgrades:**
+- `04-script-video` 2.1.0 → 2.2.0: Personal Brand Mode auto-detect (4 personal brand hooks, 30s structure, 10-criteria QA)
+- `05-copy-quang-cao` 2.2.0 → 2.3.0: Personal Brand Mode for ads (6 variants, 3 CANH BAO conditions)
+
+**New references:**
+- `references/ai-avatar-tools-vn.md` — 15 tools deep dive (HeyGen/Synthesia/D-ID/Captions/ElevenLabs/Vbee...)
+- `references/voice-clone-prompts-vn.md` — 3 region samples (North/South/Central VN)
+- `references/ai-video-disclosure-vn.md` — Nghi dinh 147/2024 compliance, 3-tier disclosure, 5 templates
+
+**New workflows:**
+- `personal-brand-launch.md` — 30-day launch (4 weeks)
+- `ai-avatar-batch.md` — 30 videos in 5 days, <$2/video
+- `personal-brand-monthly.md` — Monthly review + adjust
+
+**New agent:**
+- `personal-brand-builder` — Combines skills 22-28
+
+**Backward compatibility:** Zero breaking changes. Existing 22 skills (00-21) unchanged. Skills 04, 05 mode-switching is auto-detect.
+
+### 2026-05-03 — v2.3.0
+
+**Meta Official MCP Integration (mcp.facebook.com/ads — 29 tools)**
+
+**Upgrades:**
+- `21-audit-ads-performance` 1.1.0 → 1.2.0: Full 29-tool Meta Official MCP audit workflow (anomaly signal, industry benchmark, opportunity score, dataset quality)
+- `03-danh-gia-hieu-suat` 2.1.0 → 2.2.0: Meta Official MCP diagnostic + benchmark tools (performance trend, anomaly signal, industry benchmark, opportunity score)
+- `08-nghien-cuu-doi-thu` 2.1.0 → 2.2.0: Dual-source research (Ads Library + Meta Official MCP industry benchmarks + auction ranking)
+
+**Reference update:**
+- `references/mcp-ads-integration.md` — Major update: confirmed endpoint `mcp.facebook.com/ads`, full 29 tools list (5 groups), 3 permission tiers, setup qua claude.ai, write operation warnings, Pipeboard CLI, AdKit
+
+### 2026-05-02 — v2.2.0
+
+**Inspired by:** [charlie947/social-media-skills](https://github.com/charlie947/social-media-skills) (Charlie Hills, 350K+ followers, 100M+ views/year)
+
+**Upgrades:**
+- `04-script-video` 2.0.0 → 2.1.0: Added 6 hook formulas + reverse-engineer viral video + QA Score gate (85/100)
+- `05-copy-quang-cao` 2.1.0 → 2.2.0: Added 6 hook types for ads + Copy Scoring system (35/50 gate)
+- `01-lich-noi-dung` 2.0.0 → 2.1.0: Added Content Matrix (8 formats × pillars = auto-generated ideas)
+- `15-social-listening` 2.0.0 → 2.1.0: Added Niche Research — 20 trending topics in 7 days from VN channels
+- `product-marketing-context` 1.0.0 → 1.1.0: Enhanced Brand Voice section with voice signals + absence signals analysis
+
+**New reference:**
+- `references/hook-formulas-vn.md` — 6 hook types, funnel mapping, platform char limits, anti-patterns
+
+### 2026-05-01 — v2.1.0
+
+**Upgrades:**
+- `03-danh-gia-hieu-suat` 2.0.0 → 2.1.0: Added Health Score (0-100) + 10 Quality Gates + MCP auto-pull
+- `05-copy-quang-cao` 2.0.0 → 2.1.0: Added 6 copy frameworks (AIDA/PAS/BAB/4P/FAB/SSS) + Andromeda warning
+- `08-nghien-cuu-doi-thu` 2.0.0 → 2.1.0: Added Facebook Ads Library MCP integration
+- `21-audit-ads-performance` 1.0.0 → 1.1.0: Added MCP auto-pull section
+
+**New references:**
+- `references/mcp-ads-integration.md` — 8 MCP servers across Meta/Google/TikTok
+- `references/copy-frameworks-vn.md` — 6 copy frameworks for VN market
+- `references/quality-gates-vn.md` — 10 hard rules for ads quality
+
+**New docs:**
+- `docs/skill-map.md` — System visualization + decision tree
+- `docs/mcp-setup-guide.md` — Step-by-step MCP setup
+- `docs/workflow-guide.md` — Unified workflow guide
+- `docs/update-guide.md` — Maintenance guide
+- `docs/faq.md` — FAQ + troubleshooting
+
+**New workflow:**
+- `workflows/vi/client-onboard.md` — Agency client onboarding (5-7 days, 7 skills)
+
+**Workflow updates:**
+- All 4 workflow files now include UML sequence diagrams
+
+**CLAUDE.md:**
+- Added MCP Ads Integration section with platform-to-skill mapping
+
+### 2026-04-24 — v2.0.0 (Major release)
+
+**BREAKING CHANGES:**
+- Restructure skills: `skills/name.md` → `skills/name/SKILL.md`
+- Update frontmatter spec to match [agentskills.io](https://agentskills.io)
+- Path migration: references moved into per-skill folders (where applicable)
+
+**New features:**
+- Added foundation skill `product-marketing-context` — every skill reads this first
+- Added `.claude-plugin/marketplace.json` — install via `/plugin install`
+- Added `AGENTS.md` — universal agent compatibility spec
+- Added `VERSIONS.md` — version tracking
+- Added `validate-skills.sh` + `validate-skills.ps1` — spec validators
+- Added `.github/` templates (issues, PRs)
+- Added `CONTRIBUTING.md`
+
+**New skills (4):**
+- `16-marketing-psychology` — Nguyen ly tam ly trong marketing (Cialdini + VN cultural context)
+- `17-pricing-strategy` — Chien luoc gia cho thi truong VN
+- `18-referral-program` — He thong gioi thieu va hoa hong
+- `19-ab-test-setup` — Thiet lap A/B test don gian
+
+**Upgrades to existing skills:**
+- Bump all 16 skills from 1.0.0 to 2.0.0
+- Add `metadata.version` field to frontmatter
+- Optimize descriptions for trigger phrase matching
+- Add reference to `product-marketing-context` foundation
+
+**Plugin compat:**
+- Repo is now an official Claude Code Plugin Marketplace
+- Install via: `/plugin install minhnv0807/ai-business-skills`
+
+### 2026-04-23 — v1.1.0
+
+- Rebrand to Over Powers Agency (legacy personal attribution removed)
+- Redesign README with badges, diagrams, visual tables
+- Add star history chart
+
+### 2026-04-23 — v1.0.0 (Initial release)
+
+- 16 marketing skills (strategy, content, performance, operations)
+- 5 reference files (benchmarks, channel system, KPI formulas, content angles, tool stack)
+- 3 workflows (campaign-launch, monthly-cycle, content-production)
+- 4 agents (mkt-strategist, content-producer, performance-analyst, channel-operator)
+- 2 examples (spa-beauty, ecommerce-fashion)
+- install.sh + install.ps1
+- MIT License
+
+## Versioning policy
+
+- **Major** (X.0.0): Breaking change (frontmatter, folder structure, removed skill)
+- **Minor** (1.X.0): New skill or new major section
+- **Patch** (1.0.X): Bug fix, benchmark update, syntax correction
+
+## How agents check for updates
+
+```bash
+# Check if local is outdated
+curl -s https://raw.githubusercontent.com/minhnv0807/ai-business-skills/master/VERSIONS.md | head -30
+
+# Update all skills
+cd ~/.claude/skills/marketing && git pull
+```

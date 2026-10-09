@@ -1,0 +1,456 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [Unreleased]
+
+### Added
+
+- `74-copy-hai-lop` — dual-layer slogan / poster line for the Vietnam cluster. Method adapted from the MIT skill [xiaoma-durex-copywriter](https://github.com/crawfordxx/xiaoma-durex-copywriter) (commit `d892bfb`): two semantic layers, one-hop leap, hook-before-formula, eight localized formulas, diction checklist, visual brief. **Does not replace** `05-copy-quang-cao` or `37-caption-social`. Durex / Reckitt posters, original corpus lines, brand-red default palette, and render scripts are not imported.
+
+### Changed
+
+- Sibling routing only on `05-copy-quang-cao` (2.5.2), `37-caption-social` (1.0.2), `42-brief-hinh-anh` (1.0.2), `58-positioning` (1.0.2). Paid-ads and organic-caption lanes stay the owners they were.
+- Marketplace skill count 143 → 144 (75 VN + 69 Global). Plugin version stays 3.7.0 until the next release cut.
+
+### Changed — `20-brief-client-intake` 1.1.0: briefs written in real people's language
+
+Briefs rendered from the variants read like forms written by an AI: concept questions ("mục tiêu kênh", "định vị", "USP") that business owners could not answer, and no sign that the agency understood what they were struggling with. Owners ticked "Chưa rõ" everywhere or dropped the form halfway.
+
+- **New principle 6 in `SKILL.md`: ngôn ngữ người thật.** Every brief opens with "Anh/chị đang gặp chuyện nào?", 5–8 real pain points to tick, written the way owners actually talk. Questions describe situations instead of concepts, ask about feelings (what worries them, what wears them out, what they hope for), and every section has one line explaining why the agency is asking. The limits are explicit: empathise without scaring, never exaggerate the pain, never promise numbers.
+- **New `references/ngon-ngu-nguoi-that.md`.** A phrase dictionary mapping AI and agency wording to plain Vietnamese, a pain-point and emotion bank for all 20 variant industries (Vietnam 2025–2026), an opening template, before/after rewrites, and a 7-point self-check.
+- **Step 3 (render) now rewrites the variant's wording** instead of copying it. Variants are the content skeleton, and the brief sent to clients is written in Vietnamese with diacritics. The checklist gains a "Ngôn ngữ" section.
+- Variant files are unchanged; the new rules apply when they are rendered.
+
+## v3.7.0 — Routing, thresholds, and five new skills (2026-08-10)
+
+Came out of a structured comparison against another open marketing-skills repo. The comparison was less useful for what it suggested we add than for what it exposed in what we already had.
+
+### Fixed — defects the old validator was hiding
+
+- **`validate-skills.sh` and `.ps1` could not parse `description: |` block scalars.** They extracted the literal `|`, which silently disabled the length and trigger checks for those skills. With the parser fixed, `30-thiet-ke-master` and `30-design-master-global` turned out to have descriptions of 1329 and 1210 characters — both over the spec limit of 1024. Rewritten.
+- **The trigger check was a substring match** on `khi|when|dung|use|mention`, so any Vietnamese description containing "dung" passed. The reported "89 passed" was not measuring what it claimed. It now counts actual quoted trigger phrases (minimum 3) and requires a sibling-routing clause. Honest baseline at the time of the fix: **0 passed, 138 warnings, 0 issues**.
+- **Four contradictory kill thresholds** for the same decision — `quality-gates-vn.md` said CPA > 3× target, `21-audit-ads-performance` said CPL > 2× after 3 days, `54-media-plan` said > 150%, and a user hit all of them in one session. Consolidated into a single ladder in `quality-gates-vn.md` Gate 1, anchored on one variable (target CPA) so it recalibrates per account: hold below 3× spend, winner ≤ 1.0×, monitor 1.0–1.5×, swap above 1.5× sustained 7 days, kill above 3.0×. Skills 21 and 54 now cite it instead of restating numbers. (`55-scaling-ads` measures a delta after a budget increase — a different instrument, left intact and now labelled as such.)
+- **Consent handling existed in the Global tracking skill and was missing entirely from the Vietnamese one.** Added, covering Nghi dinh 13/2023 for domestic traffic and GDPR consent mode v2 / CCPA for any cross-border traffic.
+- **`product-marketing-context` had no version field** despite 60+ skills reading it as source of truth. Added a document version and changelog section with bump rules.
+- **Eleven source-attribution notes** remained in the repo, two naming real people with follower counts. All removed.
+- `33-b2b-lead-gen` now routes foreign-buyer work to `29-xuat-khau-b2b`, which it never referenced.
+
+### Added — 5 new VN skills
+
+- `68-cro-audit-trang` — diagnose a page that is live but not converting, in a fixed impact order. Treats the Zalo/Messenger inbox flow and Shopee/TikTok Shop listing as first-class conversion surfaces, not web-page edge cases. Includes a regression mode for "we redesigned it and it got worse".
+- `69-giu-chan-khach-hang` — retention and win-back, branching on business model (one-off / package / membership / subscription). Churn signals rewritten off product telemetry onto what a Vietnamese SME actually observes: days since last visit against that customer's own cycle, no-shows, Zalo OA read collapse, unfinished treatment packages.
+- `70-lead-magnet` — designing the free thing you trade for contact details. Previously unowned: skill 12 built the page, skill 14 nurtured afterwards, skill 31 covered the paid offer. Delivery is Zalo/Messenger-first and the lowest-friction ask is a phone number, both inverted from the usual email-first assumption.
+- `71-sales-enablement` — sales collateral plus pipeline handoff as one skill, because at SME scale it is one person. Includes a Vietnamese objection library and a no-CRM fallback.
+- `72-hoi-dong-marketing` — five anonymous archetypes with a mandatory dissenter and a disagreement map. Counters the dominant failure mode of a solo operator using AI: the AI agrees with them.
+
+### Changed
+
+- **`32-seo-growth` rebuilt** from 5.9 KB (a routing stub) to a working skill, plus `references/schema-json-ld.md` with 11 validated JSON-LD templates — the repo previously had zero. Vietnamese specifics that do not exist in generic guides: VND prices must be written unpunctuated (`"450000"`, since `"450.000"` parses as 450 dong), Tet closure handling via `specialOpeningHoursSpecification`, and NAP consistency after the July 2025 administrative restructuring. Corrects several points that are stale in common guidance: FAQPage and HowTo rich results (restricted 2023 / removed 2023), the sitelinks search box (retired 2024), and `Google-Extended` being described as a crawler.
+- **`hook-formulas-vn.md`** — a hook is now modelled as three simultaneous components (0-3s visual, first spoken line, text overlay) with a no-duplication rule, a diagnostic table mapping each weak metric to the component at fault, and the on-ramp exception to the one-variable testing rule. Read by skills 01, 04 and 05, all version-bumped.
+- **`34-ai-marketing-os`** — a two-tier action model, spend caps, allowlists and a mandatory kill switch. The repo recommended AI automation to SMEs without ever defining a safety boundary.
+- **`33-b2b-lead-gen`** — evidence discipline: every prospect row requires a source URL, a verification date and a confidence level, and no lead may be labelled Hot without a named buying signal. Outreach rewritten for Zalo and phone as primary channels.
+- `19-ab-test-setup` gains sample-size lookup tables and a 72-idea test bank; `31-offer-design` gains bonus typology and payment-structure levers; `17-pricing-strategy` gains the four tier-differentiation axes, which previously left tier design arbitrary.
+- All descriptions rewritten to a 4-part pattern — intent, verbatim trigger phrases, broadening clause, sibling routing — because the model routes on `name` and `description` only. The `triggers:` key is documentation; it is never seen at selection time.
+
+## v3.6.0 — Role SOP Packs Go Global (2026-07-30)
+
+### Added
+- **33 new Global skills (35-67, `skills/en/`)** — English mirrors of every Vietnamese role SOP pack, completing bilingual parity for the four role clusters:
+  - **Content system:** `35-brand-voice-global`, `36-content-brief-global`, `37-social-caption-global`, `38-community-seeding-global`, `39-content-audit-global`, `40-next-content-plan-global`.
+  - **Design production:** `41-campaign-asset-list-global`, `42-image-brief-global`, `43-carousel-brief-global`, `44-video-editor-brief-global`, `45-design-tool-brief-global`, `46-brand-guideline-global`, `47-design-review-global`, `48-quick-visual-brief-global`, `49-html-email-template-global`, `50-asset-resize-global`.
+  - **Performance ops:** `51-audience-research-global`, `52-account-structure-global`, `53-tracking-setup-global`, `54-media-plan-global`, `55-scaling-ads-global`, `56-retargeting-plan-global`, `57-next-ads-plan-global`.
+  - **Leader ops:** `58-positioning-global`, `59-go-to-market-global`, `60-launch-playbook-global`, `61-budget-planning-global`, `62-marketing-review-global`, `63-campaign-retrospective-global`, `64-team-brief-global`, `65-team-performance-review-global`, `66-crisis-playbook-global`, `67-agency-vendor-brief-global`.
+
+These are adaptations, not translations. Frameworks, process steps, and decision logic carry over unchanged; currency moves to USD against `references/benchmarks-global.md` medians, channels swap to the global stack (Klaviyo/Mailchimp instead of Zalo OA, Shopify/Amazon instead of Shopee/Lazada, Meta US/EU instead of Facebook VN), and compliance shifts to FTC, GDPR, CCPA, and CAN-SPAM.
+
+**Community seeding was rewritten, not translated.** Three tactics in the Vietnamese version do not survive US/EU regulation and were removed rather than localized: persona accounts (astroturfing), brand-written customer reviews (FTC 16 CFR Part 465 carries civil penalties), and staged "looking for recommendations" threads answered by your own accounts (conversation manipulation). They are replaced with a named-participant roster where team members post under real names with visible affiliation, permission-backed amplification of customer-authored stories, and disclosed answers in existing threads. The value-to-promotion ratio moved from 4:1 to Reddit's 9:1 norm, and `38-community-seeding-global/references/platform-rules.md` carries per-platform norms plus a regulatory table (FTC 255, FTC 465, EU UCPD/Omnibus, UK DMCC).
+
+### Changed
+- `marketplace.json` skill count 105 → 138; version 3.6.0.
+
+### Compatibility
+- Zero breaking changes. Vietnamese skills, agents, and workflows are untouched.
+
+## v3.5.0 — Role SOP Deep Integration (2026-07-30)
+
+### Added
+- **33 new VN skills (35-67)** — four role SOP packs adapted from community-shared fullstack marketing documents, normalized to this repo's skill spec:
+  - **Content system (35-40):** `35-brand-voice`, `36-content-brief`, `37-caption-social`, `38-seeding-plan`, `39-content-audit`, `40-next-content-plan`.
+  - **Design production (41-50):** `41-campaign-asset-list`, `42-brief-hinh-anh`, `43-brief-carousel`, `44-brief-video-editor`, `45-brief-canva`, `46-brand-guideline`, `47-design-review`, `48-quick-visual-brief`, `49-html-email-template`, `50-asset-resize`.
+  - **Performance ops (51-57):** `51-audience-research`, `52-account-structure`, `53-tracking-setup`, `54-media-plan`, `55-scaling-ads`, `56-retargeting-plan`, `57-next-ads-plan`.
+  - **Leader ops (58-67):** `58-positioning`, `59-go-to-market`, `60-launch-playbook`, `61-budget-planning`, `62-marketing-review`, `63-campaign-retrospective`, `64-team-brief`, `65-team-performance-review`, `66-crisis-playbook`, `67-agency-vendor-brief`.
+- **NEW `knowledge/` library (24 files)** — 10 foundation thinking files (brandformance, 8-part blueprint, content system, channel strategy, Meta Ads, KPI measurement, customer insight, brand/offer architecture, AI Marketing OS, business model flywheel) + 14 implementation files in `knowledge/trien-khai/` covering strategy, budget, research, persona, content framework, production, UGC, conversion content, analytics, creative strategy, reporting, and brand visual guidelines. Sized for upload into role-based AI projects; see `knowledge/README.md` for per-role upload priority.
+- **NEW agent `design-producer`** — visual & production role covering skills 41-50 plus 12 and 30.
+- **4 new VN workflows** — `content-engine`, `performance-loop`, `design-pipeline`, `leader-cadence`.
+- **2 new references** — `marketing-templates-library.md` (operational template structures: planning, tracking dashboard, audit, report, campaign, content calendar — mapped to the skill that regenerates each) and `ai-tool-orchestration.md` (multi-tool AI workflow for marketers, role-based project setup, information-gathering checklists).
+
+### Changed
+- `marketplace.json` skill count 72 → 105; version 3.5.0.
+- `34-ai-marketing-os` (v1.1.0): Brand Hub table now maps each file to the skill that produces it; role workspace and skill chains extended with the new packs; new section on deploying five role-based projects.
+- **17 existing skills enriched** with SOP-level detail (process steps, decision rules, quality gates, cross-references) without breaking their structure: `01` `02` `03` `04` `05` `06` `07` `08` `09` `10` `12` `13` `14` `19` `21` `30` `34`.
+- `references/benchmarks-vietnam.md` extended: frequency thresholds, TikTok VTR, Facebook Group and Instagram organic rates, reach-per-follower ratios, warn-vs-kill thresholds, target-relative decision rules for scale/pause/test, CPO and ROAS by industry, B2B benchmarks.
+- **Progressive disclosure applied** to the nine skills that exceeded the 500-line spec guideline: long lookup tables, platform-specific checklists, and extended templates moved into per-skill `references/` files, with a pointer line at the cut point. No content removed — every skill now loads a lean entry file and pulls detail only when needed.
+- CLAUDE.md, agents, and workflow docs updated with the new clusters and chains.
+
+### Fixed
+- Stale reference paths corrected across docs, skills, and workflows: `skills/references/` → `skills/vi/references/` (the folder moved in v3.0.0 but several links were never updated).
+
+### Removed
+- Legacy personal attribution purged from all documentation, playbooks, and adapted material. Source-specific brand assets (palette, fonts, business model) generalized into Brand Hub placeholders.
+
+### Compatibility
+- Zero breaking changes. All existing skill names, paths, workflows, and agents remain valid.
+
+## v3.4.0 — AI Marketing OS Expansion (2026-07-08)
+
+### Added
+- **NEW skill `34-ai-marketing-os`** (VN) and **`34-ai-marketing-os-global`** (EN) — Brand Hub/source of truth, role-based AI agents/projects, skill chains, second brain, data loops, MCP/connectors, SOP cadence, governance, and 30-60-90 rollout planning.
+- **2 new reference playbooks** under the new skill folders, synthesizing the community-shared fullstack marketing documents into reusable OS-level guidance.
+
+### Changed
+- `marketplace.json` skill count: 70 -> 72.
+- README, README.vi, CONNECTORS, llms, VERSIONS, and agent routing updated with AI Marketing OS coverage.
+- Community role skill samples were consolidated into workflow guidance instead of imported as duplicate skills, preserving the existing skill architecture.
+
+### Compatibility
+- Zero breaking changes. Existing skill names, paths, workflows, and agents remain valid.
+
+## v3.3.0 — Growth Expansion (2026-06-30)
+
+### Added
+- **NEW skill `31-offer-design`** (VN) and **`31-offer-design-global`** (EN) — offer packaging, value stack, bonuses, guarantees, scarcity/urgency, upsell/downsell, and offer ladder. Designed to sit between pricing, copywriting, landing page, and sales enablement.
+- **NEW skill `32-seo-growth`** (VN) and **`32-seo-growth-global`** (EN) — SEO audit, AI SEO/GEO, schema, programmatic SEO, directory submissions, and backlink planning.
+- **NEW skill `33-b2b-lead-gen`** (VN) and **`33-b2b-lead-gen-global`** (EN) — prospecting, cold outreach, lead scoring, sales enablement, CRM handoff, and RevOps basics.
+- **6 new reference playbooks** under the new skill folders to keep `SKILL.md` files concise and under the 500-line spec guideline.
+
+### Changed
+- `marketplace.json` skill count: 63 → 70.
+- README and README.vi updated with Growth Expansion coverage.
+- `VERSIONS.md` now includes the existing `29-xuat-khau-b2b` row for parity with the actual skill tree.
+
+### Compatibility
+- Zero breaking changes. Existing skill names, paths, workflows, and agents remain valid.
+
+## v3.2.0 — Anthropic Pattern Alignment (2026-05-20)
+
+### Added (additive, non-breaking)
+- **`.mcp.json`** at plugin root — declares 10 HTTP MCP servers (Slack, Canva, Figma, HubSpot, Amplitude, Notion, Ahrefs, SimilarWeb, Klaviyo, Supermetrics). Follows Anthropic `knowledge-work-plugins/marketing/.mcp.json` pattern.
+- **`CONNECTORS.md`** at plugin root — documents tool placeholder mapping (`~~marketing automation`, `~~design`, `~~SEO`, etc.). Skills are tool-agnostic; users swap connectors in `.mcp.json` without rewriting skills.
+- **`argument-hint`** frontmatter field in 10 top skills + mkt-strategist agent — enables slash command UX with inline argument prompts (e.g., `/00-ke-hoach-mkt <sản phẩm + objective>`).
+
+### Why
+Aligned with Anthropic's `knowledge-work-plugins` pattern (https://github.com/anthropics/knowledge-work-plugins) for consistency across Claude Code ecosystem. Users familiar with Anthropic plugins find ai-business-skills format predictable.
+
+### Compatibility
+- ✅ 100% backward compat — all skills work identically
+- ✅ Marketplace skill count unchanged (63)
+- ✅ Workflow chains unchanged (campaign-launch, client-onboard, etc.)
+- 📦 New: tool-agnostic placeholder syntax enables connector swapping
+
+## v3.1.0 — Design Master Bilingual + Multi-Platform Onboarding (2026-05-20)
+
+### Reconciled
+- Version bump from 2.7.0 → **3.1.0** to acknowledge prior v3.0.0 tag (folder structure rebuild) + add design master skills (VN + EN mirror) + multi-platform README rewrite. Skips premature 2.x → 3.x semver to align tags + marketplace.json.
+
+### Added (since v3.0.0)
+- **NEW skill `30-thiet-ke-master`** (VN) — Master design router 8 types (personal brand, business logo, business campaign, marketing day-to-day, editorial, infographic, web mockup hybrid, quote graphic). 3-tier API (Free prompt fallback / Pro OPENAI_API_KEY / Enterprise Open Design dispatcher). Brand identity auto-detection 7-layer search. Plain Vietnamese cho non-tech client fill.
+- **NEW skill `30-design-master-global`** (EN mirror) — Same architecture, brand examples adapted cho global market (Lattéa coffee chain, AI Income Mastery, Mark Chen founder persona).
+- **Cross-reference với OPA KIT companion repo** — README + CLAUDE.md + 2 skill SKILL.md updates pointing sang opa-prd / opa-pipeline / opa-deploy / opa-tracker / opa-diagram.
+- **Multi-platform README rewrite** — 4-tier install guide (Claude Code native / OpenCode + Ollama Pro Cloud / OpenAI Codex CLI / VS Code Cline+Continue+Cursor+Roo Code+Copilot / Aider+Openclaw+Hermes+community / manual). 30-second quick start. Size 37KB → 22KB (40% reduction).
+
+### Changed
+- `marketplace.json` skill count: 60 → 63 (added 30-thiet-ke-master + 30-design-master-global + reconcile)
+- `marketplace.json` metadata + plugin description updated với design master bilingual coverage
+
+### Notes
+- Bilingual VN + Global coverage hoàn tất cho design tooling
+- Hedging language trên platform configs uncertain (OpenCode schema illustrative, Codex CLI flag surface moving)
+
+## [Unreleased — prior]
+
+### Added
+- **Skill `29-xuat-khau-b2b`** — Export B2B Marketing for Vietnamese exporters (CN, EU, US, JP, KR markets). 5 modules: export context, company profile (EN), email templates 3-variant, trade show prep, price analysis. Contributed by [@ttran87](https://github.com/ttran87).
+- **Reference `references/export-benchmarks-vn.md`** — FOB price benchmarks Q1/2026, VN export market share, certifications by market (HACCP/BRC/FDA/Halal/GACC/ASC/GlobalGAP), payment terms risk guide, 2026 seafood trade show calendar, email outreach benchmarks.
+- Dynamic badges (stars, issues, last commit, contributors) in README
+- CHANGELOG.md following Keep a Changelog format
+- CODE_OF_CONDUCT.md (Contributor Covenant 2.1)
+- SECURITY.md with vulnerability disclosure policy
+- `.github/FUNDING.yml` sponsor button
+- `.github/workflows/validate.yml` — CI auto-validates PRs
+- `docs/getting-started.md` — full onboarding guide
+- `docs/best-practices.md` — skill authoring & usage patterns
+- GitHub topics (20 SEO-optimized tags)
+- SEO-optimized English repo description
+
+---
+
+## v2.7.0 — Design Master EN Global (2026-05-20)
+
+### Added
+- **EN mirror `30-design-master-global`** — global English version of `30-thiet-ke-master` (VN):
+  - All 8 design types translated and adapted for global market (US/EU/SEA/LATAM)
+  - All 11 reference docs in English
+  - All 16 templates in English with global brand examples (Lattéa coffee chain, Lumière Studio, AI Income Mastery, Mark Chen founder persona)
+  - 4 worked examples in English (personal avatar, Lattéa fall campaign poster, AI Income Mastery quote graphic, global roadmap infographic)
+- Bilingual coverage complete: VN clients fill via `30-thiet-ke-master`, global clients via `30-design-master-global`
+- Marketplace skill count: 62 → 63 (added EN design master)
+
+### Notes
+- Both VN and EN versions share same architecture (router + 8 modes + 3-tier API)
+- Brand examples differ: VN uses BHOP/AI Kiếm Tiền/Minh, EN uses Lattéa/AI Income Mastery/Mark Chen
+- Cross-skill references aligned: EN refs link to `02-campaign-brief-global`, `05-ad-copy-global`, etc.
+
+---
+
+## v2.6.0 — Design Master Skill (2026-05-20)
+
+### Added
+- **NEW skill `30-thiet-ke-master`** (VN only — EN version coming v2.7.0):
+  - Master design router covering 8 design types: personal-brand, business-logo, business-campaign, marketing-day-to-day, editorial, infographic, web-mockup (hybrid), quote-graphic
+  - 3-tier API support: Free (prompt fallback 5 platforms: DALL-E 3, MidJourney v6, Leonardo.ai, Imagen 3, Bing), Pro (OPENAI_API_KEY direct gpt-image-2), Enterprise (Open Design dispatcher)
+  - Auto-detect brand identity từ project (logo, palette, font) — required cho business modes
+  - Logo design: multi-variant 3-5 directions với human review disclaimer (AI-gen logo brainstorm only, not final ship)
+  - Web mockup: hybrid approach — gen hero image + recommend HTML skills (`web-prototype`, `saas-landing`, `mobile-app`, `dashboard`, `frontend-design:frontend-design`)
+  - Quote graphic: hybrid background image + HTML text overlay (text accuracy)
+  - Infographic: icons-heavy + 2-3 large numbers strategy (text minimal due to AI limitations)
+- 16 prompt templates (per format)
+- 11 reference docs (per mode + utility)
+- 4 worked examples (personal avatar, BHOP campaign poster, AI Kiếm Tiền quote graphic, OPA roadmap infographic)
+
+### Cross-references
+- Input từ: `02-brief-chien-dich`, `prd.md` (opa-prd output), `22-personal-brand-context`
+- Output cho: `01-lich-noi-dung`, `05-copy-quang-cao`, downstream marketing chain
+- Routes to: `web-prototype` family for full mockups, Canva templates for text-heavy infographics
+
+---
+
+## [2.5.0] - 2026-05-08
+
+### Added
+- **30 new global skills (cluster Global Marketing + Personal Brand)**:
+  - Foundation: `product-marketing-context-global` (4 region variants: US/EU/SEA/LATAM)
+  - Marketing universal (16): skills 00-21 minus 22-28 minus the 6 with variants
+  - Marketing with variants (6): skills 03 (perf-eval), 10 (reverse-kpi), 11 (channel-setup), 14 (email-marketing), 17 (pricing), 18 (referral), 21 (ads-audit) — each with US/EU/SEA/LATAM variants
+  - PB foundation: `22-personal-brand-context-global` (4 region variants, each covers founder/coach/creator)
+  - PB universal (4): skills 23, 25, 26, 28
+  - PB variants (2): skills 24 (ai-avatar — disclosure law per region), 27 (monetize — tax/legal per region)
+  - **Flagship**: `29-dropshipping-mastery-global` (12 sections, US/EU focus, 10 ads/week pipeline)
+- **7 new references** in `skills/en/references/`:
+  - `global-platforms-comparison.md` — 10 platforms × 4 regions matrix
+  - `global-legal-compliance.md` — GDPR/CCPA/CAN-SPAM/TCPA/PDPA/LGPD comprehensive
+  - `global-currency-pricing.md` — currency psychology + VAT/GST/Sales tax
+  - `dropshipping-tools-global.md` — 15+ tools deep-dive
+  - `ai-video-disclosure-global.md` — FTC/EU AI Act/regional disclosure
+  - `voice-clone-prompts-global.md` — US/UK/AU/SEA accent samples
+  - `hook-formulas-global.md` — 6 hook types × 5 English examples
+- **8 new workflows (newbie-friendly)** in `workflows/en/`:
+  - Marketing: client-onboard, campaign-launch, monthly-cycle, content-production, dropshipping-launch
+  - Personal Brand: personal-brand-launch, ai-avatar-batch, personal-brand-monthly
+- **5 new docs** in `docs/`:
+  - `getting-started-global.md` — 5-min quickstart
+  - `global-region-guide.md` — "Which region am I?"
+  - `dropshipping-guide.md` — 8-chapter handbook
+  - `apac-roadmap.md` — v2.6.0 plan
+  - `release-notes/v2.5.0.md` — bilingual release notes
+- **2 new examples**:
+  - `personal-brand-coach-global.md` — Sample coach output
+  - `dropshipping-store-global.md` — Sample dropshipping launch
+
+### Changed
+- **5 agents** now universal mode (auto-detect VN/Global cluster):
+  - `mkt-strategist`, `content-producer`, `performance-analyst`, `channel-operator`, `personal-brand-builder`
+  - Detection: reads `.agents/*-context*.md` files
+  - Behavior: identical to v2.4.0 if only VN context exists
+- README.md and README.vi.md updated for v2.5.0 (60 skills, 5 universal agents, 15 workflows)
+- CLAUDE.md, AGENTS.md updated with universal mode docs
+
+### Backward Compatibility
+- **Zero breaking changes**: VN cluster (`skills/` — 29 skills) UNCHANGED
+- All existing agents continue to work in VN-only mode without any config
+- Existing workflows preserved
+- Foundation files (`.agents/product-marketing-context.md`, `.agents/personal-brand-context.md`) unchanged
+
+---
+
+## [2.4.0] - 2026-05-08
+
+### Added
+- **7 new skills (cluster Personal Brand + AI Avatar)**:
+  - `22-personal-brand-context` — Foundation skill with 3 variants (founder/coach/creator), creates `.agents/personal-brand-context.md`
+  - `23-personal-brand-strategy` — 12-month strategy (Ikigai niche selection, positioning statement, story arc, content pillars 4×7=28, authority ladder 5 stages, growth plan)
+  - `24-ai-avatar-production` — Flagship: 3-tier tools (Free/Pro/Enterprise), 4 workflows (single/translate/batch/hybrid), voice clone protocol, anti-detection FB/IG/TikTok VN, ethics & disclosure VN (Nghi dinh 147/2024), QA Score 100
+  - `25-voice-clone-podcast` — Audio AI (voiceover/podcast/audiobook), repurpose 1:10
+  - `26-thought-leadership-content` — Long-form text (3 structures: PAS-Insight/Story-Lesson-CTA/Hook-List-Reveal, 6 hooks, sentence rhythm engineering, repurpose 1:5)
+  - `27-personal-brand-monetize` — 3 funnel versions, pricing psychology, outreach inbound/outbound, brand deal negotiation, VN tax & legal 2026
+  - `28-community-building` — Platform comparison VN 2026 (Zalo/Telegram/FB/Skool/Mighty/Discord), 3-layer blueprint, onboarding 7-day, moderation playbook
+- **3 new references**:
+  - `references/ai-avatar-tools-vn.md` — 15 tools deep dive (HeyGen/Synthesia/D-ID/Captions/ElevenLabs/Vbee...)
+  - `references/voice-clone-prompts-vn.md` — 3 region samples (North/South/Central VN)
+  - `references/ai-video-disclosure-vn.md` — Nghi dinh 147/2024 compliance, 3-tier disclosure, 5 templates
+- **3 new workflows (newbie-friendly)**:
+  - `personal-brand-launch.md` — 30-day launch (4 weeks)
+  - `ai-avatar-batch.md` — 30 videos in 5 days, <$2/video
+  - `personal-brand-monthly.md` — Monthly review + adjust
+- **1 new agent**: `personal-brand-builder` — Combines skills 22-28
+- **Documentation**:
+  - `docs/personal-brand-guide.md` — 8-chapter cam nang (~715 lines)
+  - `docs/getting-started-personal-brand.md` — 5-min quickstart (~214 lines)
+  - `docs/release-notes/v2.4.0.md` — Bilingual release notes
+  - `examples/personal-brand-coach.md` — Sample output for fictional coach Linh
+
+### Changed
+- `04-script-video` — bumped 2.1.0 → 2.2.0: added Personal Brand Mode auto-detect via context file (4 personal brand hooks, 30s personal structure, 10-criteria QA score)
+- `05-copy-quang-cao` — bumped 2.2.0 → 2.3.0: added Personal Brand Mode for ads (6 variants for personal brand, 3 CANH BAO conditions)
+- `docs/workflow-guide.md` — added Personal Brand Workflows section + Mode A/B note
+
+### Backward Compatibility
+- **Zero breaking changes**: existing 22 skills (00-21) unchanged
+- Skills 04, 05 mode-switching is auto-detect: users with only `product-marketing-context.md` continue using Mode A (default), behavior identical to v2.3.0
+- All existing agent files (`mkt-strategist`, `content-producer`, `performance-analyst`) added 1-line differentiation note (cosmetic, no behavior change)
+
+---
+
+## [2.3.0] — 2026-05-03
+
+### Added
+- Meta Official MCP endpoint confirmed: `https://mcp.facebook.com/ads` — 29 tools, 3 permission tiers (read-only / read-write / read-write-financial)
+- Full 29-tool reference in `mcp-ads-integration.md`: Campaign Management (5), Product Catalog (10), Accounts & Pages (3), Datasets & Tracking (4), Insights & Benchmarks (7)
+- 8-step MCP audit workflow in `21-audit-ads-performance` using official tools (anomaly signal → industry benchmark → opportunity score → dataset quality)
+- MCP diagnostic + benchmark workflow in `03-danh-gia-hieu-suat` (performance trend → anomaly signal → industry benchmark → opportunity score)
+- Dual-source competitor research in `08-nghien-cuu-doi-thu`: Ads Library MCP (observe) + Meta Official MCP (measure) → gap analysis
+
+### Changed
+- `21-audit-ads-performance` 1.1.0 → 1.2.0: Expanded MCP section with 11 prioritized official tools + step-by-step audit workflow
+- `03-danh-gia-hieu-suat` 2.1.0 → 2.2.0: Added 7 official MCP diagnostic/benchmark tools + 4-step quick assessment workflow
+- `08-nghien-cuu-doi-thu` 2.1.0 → 2.2.0: Added Meta Official MCP benchmarks (advertiser context, industry benchmark, auction ranking) alongside Ads Library
+- `references/mcp-ads-integration.md` — Major update: confirmed endpoint, full tool list, permission tiers, setup via claude.ai, write warnings, AdKit + Pipeboard CLI additions
+
+---
+
+## [2.2.0] — 2026-05-02
+
+### Added
+- **New reference:** `references/hook-formulas-vn.md` — 6 hook types (Con so, Nguoc doi, Bien doi, Muon uy tin, Thu nhan, Khan cap) with VN examples, funnel mapping, platform char limits, anti-patterns
+- Content Matrix section in `01-lich-noi-dung` — 8 content formats × pillars = auto-generated ideas (adapted from Justin Welsh method)
+- Niche Research section in `15-social-listening` — 20 trending topics in 7 days from 6 VN channels (FB Groups, TikTok Discover, Google News VN, Zalo Communities, Forums, KOL feeds)
+- 6 hook formulas + reverse-engineer viral video process + QA Score gate (85/100) in `04-script-video`
+- 6 hook types for ads + Copy Scoring system (35/50 gate) in `05-copy-quang-cao`
+- Brand Voice analysis with voice signals + absence signals in `product-marketing-context` section 10b
+
+### Changed
+- `04-script-video` 2.0.0 → 2.1.0: Hook formulas, viral reverse-engineering, QA scoring
+- `05-copy-quang-cao` 2.1.0 → 2.2.0: Ad hook types, copy scoring system
+- `01-lich-noi-dung` 2.0.0 → 2.1.0: Content Matrix for idea generation
+- `15-social-listening` 2.0.0 → 2.1.0: Niche Research for trending topics
+- `product-marketing-context` 1.0.0 → 1.1.0: Enhanced Brand Voice section
+
+### Credits
+- Adapted from [charlie947/social-media-skills](https://github.com/charlie947/social-media-skills) (Charlie Hills, 350K+ followers, 100M+ views/year) — hook generator, content matrix, voice builder, post scorer, niche research patterns
+
+---
+
+## [2.1.0] — 2026-05-01
+
+### Added
+- **New skill:** `20-brief-client-intake` — 20-industry client intake form for agencies
+- **New skill:** `21-audit-ads-performance` — 84-checkpoint ads health audit with scoring
+- **New reference:** `references/mcp-ads-integration.md` — 8 MCP servers (Meta/Google/TikTok/Cross-platform)
+- **New reference:** `references/copy-frameworks-vn.md` — 6 professional copy frameworks (AIDA, PAS, BAB, 4P, FAB, SSS)
+- **New reference:** `references/quality-gates-vn.md` — 10 hard rules for ads quality control
+- **New docs:** `docs/skill-map.md` — full system visualization with decision tree
+- **New docs:** `docs/mcp-setup-guide.md` — step-by-step MCP setup for Meta/Google/TikTok
+- **New docs:** `docs/workflow-guide.md` — unified workflow selection guide
+- **New docs:** `docs/update-guide.md` — maintenance and versioning guide
+- **New docs:** `docs/faq.md` — FAQ + troubleshooting (20+ Q&As)
+- **New workflow:** `workflows/vi/client-onboard.md` — agency client onboarding (5-7 days, 7 skills)
+- UML sequence diagrams added to all 4 workflow files
+- MCP Ads Integration section added to `CLAUDE.md`
+
+### Changed
+- `03-danh-gia-hieu-suat` 2.0.0 → 2.1.0: Health Score system (0-100, grades A-F) + 10 Quality Gates quick-reference + MCP auto-pull data
+- `05-copy-quang-cao` 2.0.0 → 2.1.0: 6 copy frameworks with audience temperature selection + Andromeda creative similarity warning
+- `08-nghien-cuu-doi-thu` 2.0.0 → 2.1.0: Facebook Ads Library MCP integration for automated competitor ad research
+- `21-audit-ads-performance` 1.0.0 → 1.1.0: MCP auto-pull section with GAQL examples
+
+---
+
+## [2.0.0] — 2026-04-24
+
+### BREAKING
+- Restructured skills: `skills/name.md` → `skills/name/SKILL.md`
+- Frontmatter `name` field now matches directory (includes numeric prefix)
+- Compliant with [Agent Skills Spec](https://agentskills.io)
+
+### Added
+- **Foundation skill:** `product-marketing-context` — all skills read `.agents/product-marketing-context.md` first. Saves ~70% time per conversation.
+- **Plugin manifest:** `.claude-plugin/marketplace.json` — install via `/plugin install minhnv0807/ai-business-skills`
+- `AGENTS.md` — universal agent compatibility spec
+- `VERSIONS.md` — per-skill version tracking
+- `validate-skills.sh` + `validate-skills.ps1` — spec validators
+- `CONTRIBUTING.md` — contribution guide
+- `.github/ISSUE_TEMPLATE/` + `.github/PULL_REQUEST_TEMPLATE/`
+- Bilingual docs: `README.md` (English) + `README.vi.md` (Vietnamese)
+
+### New Skills (4)
+- `16-marketing-psychology` — 7 Cialdini principles + Vietnam cultural adaptation
+- `17-pricing-strategy` — Pricing tiers, charm/anchor/bundle pricing, break-even analysis
+- `18-referral-program` — 1-way/2-way/affiliate models + VN channels + anti-fraud
+- `19-ab-test-setup` — Sample size calculation + 8 elements to test + statistical significance
+
+### Changed
+- All 16 existing skills bumped from 1.0.0 → 2.0.0
+- README redesigned with plugin install, foundation skill section, 20-skill table
+- Project structure in README reflects new folder-per-skill layout
+
+### Credits
+- Inspired by [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) — foundation skill concept + plugin spec structure
+
+---
+
+## [1.1.0] — 2026-04-23
+
+### Changed
+- Rebrand to "Over Powers Agency" (legacy personal attribution removed)
+- Redesigned README with badges, diagrams, visual tables
+- Added star history chart
+
+---
+
+## [1.0.0] — 2026-04-23
+
+### Added
+- Initial release with 16 marketing skills:
+  - **Strategy (4):** 00-ke-hoach-mkt, 02-brief-chien-dich, 08-nghien-cuu-doi-thu, 09-insight-khach-hang
+  - **Content (5):** 01-lich-noi-dung, 04-script-video, 05-copy-quang-cao, 06-brief-ugc-egc, 15-social-listening
+  - **Performance (3):** 03-danh-gia-hieu-suat, 07-bao-cao-marketing, 10-tinh-kpi-nguoc
+  - **Operations (4):** 11-thiet-lap-kenh, 12-brief-landing-page, 13-phan-tich-du-lieu, 14-email-marketing
+- 5 reference files (benchmarks, channel system, KPI formulas, content angles, tool stack)
+- 3 workflows (campaign-launch, monthly-cycle, content-production)
+- 4 agent personas (mkt-strategist, content-producer, performance-analyst, channel-operator)
+- 2 example outputs (spa-beauty, ecommerce-fashion)
+- `install.sh` (macOS/Linux) + `install.ps1` (Windows)
+- MIT License
+
+---
+
+## Version Guide
+
+- **Major (X.0.0):** Breaking changes (frontmatter spec, folder structure, removed skills)
+- **Minor (1.X.0):** New skill added, new major feature
+- **Patch (1.0.X):** Bug fixes, benchmark updates, syntax corrections
+
+[Unreleased]: https://github.com/minhnv0807/ai-business-skills/compare/v2.5.0...HEAD
+[2.5.0]: https://github.com/minhnv0807/ai-business-skills/compare/v2.4.0...v2.5.0
+[2.4.0]: https://github.com/minhnv0807/ai-business-skills/compare/v2.3.0...v2.4.0
+[2.3.0]: https://github.com/minhnv0807/ai-business-skills/compare/v2.2.0...v2.3.0
+[2.2.0]: https://github.com/minhnv0807/ai-business-skills/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/minhnv0807/ai-business-skills/compare/v2.0.0...v2.1.0
+[2.0.0]: https://github.com/minhnv0807/ai-business-skills/releases/tag/v2.0.0
+[1.1.0]: https://github.com/minhnv0807/ai-business-skills/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/minhnv0807/ai-business-skills/releases/tag/v1.0.0

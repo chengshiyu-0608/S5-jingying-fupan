@@ -1,0 +1,4 @@
+interface:
+  display_name: "硅菩提小微经营助手"
+  short_description: "六模块经营路线，先确认再生成行动卡"
+  default_prompt: "我想解决一个经营问题，请先根据我的经营形态、阶段、目标和材料出确认卡，确认后再给行动卡。"

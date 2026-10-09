@@ -1,0 +1,4 @@
+interface:
+  display_name: "硅菩提小微经营助手"
+  short_description: "为摊位和小门店生成可执行、可跳过的开店路线与行动卡"
+  default_prompt: "请根据我的经营形态、阶段和目标，生成可以跳过已完成步骤的开店路线。"

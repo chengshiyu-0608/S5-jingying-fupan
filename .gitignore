@@ -1,0 +1,14 @@
+# Local preview/runtime artifacts
+node_modules/
+.cache/
+*.log
+*.tmp
+
+# Generated verification screenshots and temporary checks
+**/verify.png
+**/.verify-*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/

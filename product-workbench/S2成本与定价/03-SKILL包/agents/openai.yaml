@@ -1,0 +1,4 @@
+interface:
+  display_name: "定价决策工作流"
+  short_description: "把成本、毛利、保本、记录和调价串成确认卡工作流"
+  default_prompt: "帮我按确认卡走一遍定价决策工作流，先从选品与成本核算开始"
