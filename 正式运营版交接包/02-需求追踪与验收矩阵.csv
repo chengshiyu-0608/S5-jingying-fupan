@@ -1,0 +1,11 @@
+来源ID,目标ID,需求ID,GAP_ID,MVP证据ID,处置,优先级,AC_ID,Test_ID,测试层级,变更ID,TASK_ID,实现边界或代码链接,权威验证命令,缺陷ID,验收证据,目标Release,UAT签署,状态,Owner
+SRC-001,OBJ-001,FR-001,GAP-001,EVD-002,重写,Must,AC-FR-001-01,TEST-001,API/E2E/安全,,TASK-001,auth与session服务,待技术设计后补充,,,R0,,草稿,产品Owner+C技术负责人
+SRC-001,OBJ-001,FR-002,GAP-002,EVD-004,新增,Must,AC-FR-002-01,TEST-002,集成/安全,,TASK-002,upload与object-storage,待技术设计后补充,,,R0,,草稿,C技术负责人+安全Owner
+SRC-001,OBJ-002,FR-003,GAP-003,EVD-004,新增,Must,AC-FR-003-01,TEST-003,黄金数据集/集成,,TASK-003,parser与quality-check,待解析器选型后补充,,,R0,,草稿,数据Owner+C技术负责人
+SRC-001,OBJ-002,FR-004,GAP-004,EVD-007,补全,Must,AC-FR-004-01,TEST-004,API/E2E/UAT,,TASK-004,dataset-confirmation,待数据模型后补充,,,R0,,草稿,产品Owner+数据Owner
+SRC-001,OBJ-001,FR-005,GAP-005,EVD-004,重写,Must,AC-FR-005-01,TEST-005,单元/对账/UAT,,TASK-005,metric-rule-engine,待指标字典后补充,,,R0,,草稿,数据Owner+产品Owner
+SRC-001,OBJ-001,FR-006,GAP-006,EVD-004,重写,Must,AC-FR-006-01,TEST-006,集成/E2E/快照,,TASK-006,report-orchestrator与renderer,待模型选型后补充,,,R1,,草稿,产品Owner+C技术负责人
+SRC-001,OBJ-003,FR-007,GAP-007,EVD-005,重写,Must,AC-FR-007-01,TEST-007,支付沙箱/契约/对账,,TASK-007,order与payment,待支付渠道后补充,,,R1,,草稿,业务Sponsor+财务Owner+C技术负责人
+SRC-001,OBJ-001,FR-008,GAP-008,EVD-003,新增,Must,AC-FR-008-01,TEST-008,API/E2E/隐私,,TASK-008,history与data-rights,待留存策略后补充,,,R1,,草稿,数据Owner+C技术负责人
+SRC-001,OBJ-004,FR-009,GAP-009,EVD-007,新增,Must,AC-FR-009-01,TEST-009,E2E/权限/UAT,,TASK-009,admin-console与admin-api,待角色矩阵确认后补充,,,R1,,草稿,运营Owner+C技术负责人
+SRC-001,OBJ-004,FR-010,GAP-010,EVD-001,新增,Must,AC-FR-010-01,TEST-010,OAT/恢复/安全,,TASK-010,observability与backup,待部署架构后补充,,,R0/R1,,草稿,运维Owner+安全Owner+QA
