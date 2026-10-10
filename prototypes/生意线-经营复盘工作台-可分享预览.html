@@ -64,6 +64,19 @@ body{background:#eef6ff;color:var(--ink)}.page{background:#fff}.top{background:#
 .hero-note-rule strong{font-size:13px;color:#82a9d6}
 @media(max-width:1050px){.hero-note{max-width:520px}.hero-note:before{right:8px}}
 @media(max-width:620px){.hero-note{gap:13px;padding:18px 0 12px;background:radial-gradient(circle at 32% 40%,rgba(255,255,255,.86) 0%,rgba(255,255,255,.38) 48%,rgba(255,255,255,0) 78%)}.hero-note:before{top:-4px;right:0;font-size:78px}.hero-note b{font-size:36px}.hero-note p{font-size:13px;line-height:1.75}.hero-note-rule{padding-top:10px}}
+/* 付款抽屉：借鉴成熟商品结算页的层级感，保留生意线自己的蓝白语言 */
+.pay-backdrop{background:rgba(19,37,61,.46);backdrop-filter:blur(3px);align-items:stretch}
+.pay-drawer{width:min(582px,100%);padding:0 30px 22px;background:#fff;box-shadow:-18px 0 48px rgba(24,58,99,.18);animation:payDrawerIn .28s cubic-bezier(.2,.8,.2,1)}
+.pay-head{position:sticky;top:0;z-index:2;margin:0 -30px;padding:24px 30px 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid #e7eef6}
+.pay-kicker{color:#1769d2;letter-spacing:.08em;font-family:'DM Sans','Noto Sans SC',sans-serif;font-size:11px}
+.pay-head h2{margin:8px 52px 0 0;color:#18263b;font-size:30px;line-height:1.16;letter-spacing:-1.4px}
+.pay-close{width:34px;height:34px;background:#edf4fb;color:#1769d2;transition:.18s}.pay-close:hover{background:#dcecff;transform:rotate(8deg)}
+.pay-proof{margin:22px 0 25px;padding:16px 18px;background:#f4f9ff;border:1px solid #d8e8f8;border-left:3px solid #2f83e8;gap:5px}.pay-proof b{font-size:13px;color:#18263b}.pay-proof span{font-size:11px;line-height:1.65;color:#687c92}
+.plan-list{gap:10px}.plan{position:relative;min-height:76px;padding:14px 16px;border:1px solid #dbe6f2;border-radius:8px;background:#fff;transition:.18s}.plan:hover{border-color:#83b6eb;background:#f7fbff;transform:translateY(-1px)}.plan.selected{border:2px solid #1769d2;background:#f1f7ff;box-shadow:0 7px 18px rgba(23,105,210,.12)}.plan.selected:before{content:'当前选择';position:absolute;right:12px;top:-10px;padding:2px 7px;border-radius:99px;background:#1769d2;color:#fff;font-size:9px;font-weight:700}.plan b{font-size:14px;color:#18263b}.plan small{font-size:10px;color:#75879a;margin-top:4px}.plan strong{font-size:25px;color:#1769d2;letter-spacing:-.8px}.plan strong:before{content:'¥';font-size:14px;margin-right:2px;font-weight:600}
+.pay-includes{margin:25px 0 0;padding:0;background:transparent;color:#5e7084;font-size:11px;gap:0;border-top:1px solid #e5edf6}.pay-includes b{display:block;padding:13px 0 9px;color:#18263b;font-size:12px}.pay-includes span{padding:9px 0;border-bottom:1px solid #edf2f7;gap:8px}.pay-includes .icon{color:#1769d2}
+.pay-total{position:sticky;bottom:0;margin:22px -30px 0;padding:15px 30px 0;background:rgba(255,255,255,.97);border-top:1px solid #e5edf6}.pay-total small{font-size:10px;color:#7a8da3}.pay-total strong{font-size:30px;color:#1769d2;letter-spacing:-.8px}.pay-total .primary{border-radius:6px;background:#1769d2;padding:13px 17px;box-shadow:0 5px 14px rgba(23,105,210,.2)}.pay-total .primary:hover{background:#0f58b8;transform:translateY(-1px)}.pay-note{margin:12px 0 0;font-size:10px;color:#8b9aaa}
+@keyframes payDrawerIn{from{opacity:.4;transform:translateX(28px)}to{opacity:1;transform:none}}
+@media(max-width:620px){.pay-drawer{width:100%;padding:0 16px 18px}.pay-head{margin:0 -16px;padding:20px 16px 17px}.pay-head h2{font-size:25px;margin-right:34px}.pay-proof{margin:18px 0 21px}.pay-total{margin-left:-16px;margin-right:-16px;padding-left:16px;padding-right:16px}.pay-total .primary{padding:12px 12px;font-size:12px}}
 </style>
 </head>
 <body><div id="root"></div>
@@ -156,14 +169,15 @@ function App(){
  useEffect(()=>{
    if(!showPay) return;
    const plan=plans[selectedPlan];
+   const planRows=Object.entries(plans).map(([id,item])=>`<button class="plan ${id===selectedPlan?'selected':''}" data-plan-id="${id}"><span><b>${item.name}</b><small>${item.desc}</small></span><strong>${item.price}</strong></button>`).join('');
    const el=document.createElement('div');
    el.className='pay-backdrop';
-   el.innerHTML=`<div class="pay-drawer"><div class="pay-head"><div><span class="pay-kicker">生意线 · 专业服务</span><h2>把一份报告，变成明天能用的经营决策</h2></div><button class="pay-close" aria-label="关闭">${svgIcon('close')}</button></div><div class="pay-proof"><b>你现在看到的是诊断草稿</b><span>专业版会补齐证据链、经营归因和可执行的跟踪表，不只是再多几张图。</span></div><div class="plan-list"><button class="plan selected"><span><b>${plan.name}</b><small>${plan.desc}</small></span><strong>¥${plan.price}</strong></button><button class="plan"><span><b>门店经营版</b><small>多门店对比 + 30 天跟踪建议</small></span><strong>¥199</strong></button></div><div class="pay-includes"><b>专业版交付</b><span>${svgIcon('check')}经营摘要与关键证据</span><span>${svgIcon('check')}品项 / 损耗 / 成本归因</span><span>${svgIcon('check')}明日行动卡与跟踪指标</span><span>${svgIcon('check')}可打印 PDF 报告</span></div><div class="pay-total"><div><small>应付金额</small><strong>¥${plan.price}</strong></div><button class="primary pay-buy">立即购买并生成 ${svgIcon('arrowRight')}</button></div><p class="pay-note">原型演示：不会真实扣款。正式版可接微信支付 / 支付宝。</p></div>`;
+   el.innerHTML=`<div class="pay-drawer"><div class="pay-head"><div><span class="pay-kicker">生意线 · 专业服务</span><h2>把一份报告，变成明天能用的经营决策</h2></div><button class="pay-close" aria-label="关闭">${svgIcon('close')}</button></div><div class="pay-proof"><b>你的诊断草稿已经准备好了</b><span>升级后补齐证据链、品项归因和明日行动卡，直接拿去做经营决策。</span></div><div class="plan-list">${planRows}</div><div class="pay-includes"><b>专业版会交付</b><span>${svgIcon('check')}经营摘要与关键证据</span><span>${svgIcon('check')}品项 / 损耗 / 成本归因</span><span>${svgIcon('check')}明日行动卡与跟踪指标</span><span>${svgIcon('check')}可打印 PDF 报告</span></div><div class="pay-total"><div><small>应付金额</small><strong>¥${plan.price}</strong></div><button class="primary pay-buy">立即购买并生成 ${svgIcon('arrowRight')}</button></div><p class="pay-note">原型演示：不会真实扣款。正式版可接微信支付 / 支付宝。</p></div>`;
    document.body.appendChild(el);
    const close=()=>{el.remove();setShowPay(false)};
-   el.addEventListener('click',e=>{if(e.target===el||e.target.closest('.pay-close'))close(); if(e.target.closest('.pay-buy')){close();notify(`已选择${plan.name}，原型已进入收银台`)}});
+   el.addEventListener('click',e=>{const choice=e.target.closest('[data-plan-id]');if(choice){setSelectedPlan(choice.dataset.planId);return}if(e.target===el||e.target.closest('.pay-close'))close();if(e.target.closest('.pay-buy')){close();notify(`已选择${plan.name}，原型已进入收银台`)}});
    return()=>el.remove();
- },[showPay,selectedPlan]);
+ },[showPay,selectedPlan,data.gross,data.margin]);
  const openLogin=(id=caseId)=>{setCaseId(id);setShowLogin(true)};
  const enterCase=()=>{const chosen=caseStudies.find(x=>x.id===caseId)||caseStudies[0];setRows(chosen.rows);setFiles(chosen.files);setStore(chosen.store);setReportConfirmed(false);setReportAck(false);localStorage.setItem('reviewRows',JSON.stringify(chosen.rows));localStorage.setItem('reviewFiles',JSON.stringify(chosen.files));localStorage.setItem('reviewStore',chosen.store);localStorage.removeItem('reviewConfirmed');localStorage.setItem('reviewDemoLoggedIn','yes');setShowLogin(false);notify(`已进入${chosen.industry}案例，请确认分析口径`);setTimeout(()=>document.querySelector('.body')?.scrollIntoView({behavior:'smooth',block:'start'}),120)};
  useEffect(()=>{if(!showLogin)return;const host=document.createElement('div');document.body.appendChild(host);const root=ReactDOM.createRoot(host);root.render(<LoginDialog caseItem={activeCase} onClose={()=>setShowLogin(false)} onComplete={enterCase}/>);return()=>{setTimeout(()=>root.unmount(),0);host.remove()}},[showLogin,caseId]);
